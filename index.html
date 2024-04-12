@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Title Here</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div class="carousel">
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">Hi 👋</div>
+            <div class="num">01</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/59/6b/b0/596bb0054cdd690f12b007dc002b0631.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">I want to tell you Something 😍</div>
+            <div class="num">02</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/2b/2e/de/2b2ede21a5fca8893ecf0ec866092bad.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">Please Keep Dragging 😊 </div>
+            <div class="num">03</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/0d/51/c8/0d51c8d9bdab90c1cd60d08dd39bff21.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">You are Amazing 🤩 </div>
+            <div class="num">04</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/d3/8a/52/d38a52828420dabcb479edbc6ae38bd1.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">Most Beautiful Person on Earth 💯</div>
+            <div class="num">05</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/7a/34/7c/7a347c237a55bea636d83e6c753ebe0e.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">And Cutest 🎀</div>
+            <div class="num">06</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/00/68/58/006858b16f0f1e6843c2710dad232bf3.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">And Since i met You 😗 </div>
+            <div class="num">07</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/3d/3f/ef/3d3fef9be7880fa6c61bb2f947ba1836.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">I feel very Lucky Everyday 😇</div>
+            <div class="num">08</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/5b/3b/0f/5b3b0fbea287e4f27a85057e98aa0808.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">and I have Crush on You 🥰</div>
+            <div class="num">09</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/c3/82/28/c382288e828fb76962885b64f489ef8d.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">I love You ❤️</div>
+            <div class="num">10</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/8a/7e/3e/8a7e3e842b68ceacdc11986b89ed9650.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+
+    <div class="carousel-item">
+        <div class="carousel-box">
+            <div class="title">Seriously?😂 April hai💀</div>
+            <div class="num">11</div>
+            <video class="d-block w-100" src="https://v1.pinimg.com/videos/mc/720p/c9/9f/bb/c99fbbc80afa7eae4865cdee95e97145.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+</div>
+
+<!-- Other content -->
+<div class="layout">
+    <div class="box">HRK.</div>
+</div>
+
+<a href="tg://openmessage?user_id=6460703454" target="_blank" class="logo">H</a>
+
+<!-- Cursor -->
+<div class="cursor"></div>
+<div class="cursor cursor2"></div>
+
+<!-- Background audio -->
+<audio id="background-audio" autoplay loop src="song.mp3"></audio>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const backgroundAudio = document.getElementById('background-audio');
+  let currentIndex = 0;
+
+  function playBackgroundSong() {
+    if (backgroundAudio) {
+      backgroundAudio.play();
+    }
+  }
+
+  function pauseBackgroundSong() {
+    if (backgroundAudio) {
+      backgroundAudio.pause();
+      backgroundAudio.currentTime = 0; // Reset audio to start
+    }
+  }
+
+  function changeSong() {
+    currentIndex++;
+    if (currentIndex >= carouselItems.length) {
+      currentIndex = 0;
+    }
+  }
+
+  /*--------------------
+  Vars
+  --------------------*/
+  let progress = 50;
+  let startX = 0;
+  let active = 0;
+  let isDown = false;
+
+  /*--------------------
+  Contants
+  --------------------*/
+  const speedWheel = 0.02;
+  const speedDrag = -0.1;
+
+  /*--------------------
+  Get Z
+  --------------------*/
+  const getZindex = (array, index) => (array.map((_, i) => (index === i) ? array.length : array.length - Math.abs(index - i)));
+
+  const $items = document.querySelectorAll('.carousel-item');
+  const $cursors = document.querySelectorAll('.cursor');
+
+  const displayItems = (item, index, active) => {
+    const zIndex = getZindex([...$items], active)[index];
+    item.style.setProperty('--zIndex', zIndex);
+    item.style.setProperty('--active', (index-active)/$items.length);
+  };
+
+  /*--------------------
+  Animate
+  --------------------*/
+  const animate = () => {
+    progress = Math.max(0, Math.min(progress, 100));
+    active = Math.floor(progress/100*($items.length-1));
+    
+    $items.forEach((item, index) => displayItems(item, index, active));
+  };
+  animate();
+
+  /*--------------------
+  Click on Items
+  --------------------*/
+  $items.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      progress = (i/$items.length) * 100 + 10;
+      animate();
+      changeSong();
+    });
+  });
+
+  /*--------------------
+  Handlers
+  --------------------*/
+  const handleWheel = e => {
+    const wheelProgress = e.deltaY * speedWheel;
+    progress = progress + wheelProgress;
+    animate();
+  };
+
+  const handleMouseMove = (e) => {
+    if (e.type === 'mousemove') {
+      $cursors.forEach(($cursor) => {
+        $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+    }
+    if (!isDown) return;
+    const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const mouseProgress = (x - startX) * speedDrag;
+    progress = progress + mouseProgress;
+    startX = x;
+    animate();
+  };
+
+  const handleMouseDown = e => {
+    isDown = true;
+    startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+  };
+
+  const handleMouseUp = () => {
+    isDown = false;
+  };
+
+  /*--------------------
+  Listeners
+  --------------------*/
+  document.addEventListener('mousewheel', handleWheel);
+  document.addEventListener('mousedown', handleMouseDown);
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mouseup', handleMouseUp);
+  document.addEventListener('touchstart', handleMouseDown);
+  document.addEventListener('touchmove', handleMouseMove);
+  document.addEventListener('touchend', handleMouseUp);
+
+  playBackgroundSong(); // Play the background song when the page loads
+});
+</script>
+</body>
+</html>
+
+
