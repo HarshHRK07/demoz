@@ -77,6 +77,9 @@ def handle_cvv():
     client_secret = request.args.get('client_secret')
     publishable_key = request.args.get('pk')
 
+    # Extracting payment intent ID from client secret
+    payment_intent_id = client_secret.split("_secret_")[0]
+
     # API endpoint to create a payment method
     create_payment_method_url = "https://api.stripe.com/v1/payment_methods"
 
@@ -130,3 +133,4 @@ def handle_cvv():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
+    
