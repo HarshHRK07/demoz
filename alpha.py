@@ -4,29 +4,32 @@ from mitmproxy import http, ctx
 # Domains to intercept for modifying requests and corresponding keys
 DOMAIN_KEYS_MAPPING = {
     "api.stripe.com": [
-        rb"payment_method_data\[card\]\[cvc\]",
-        rb"card\[cvc\]",
-        rb"source_data\[card\]\[cvc\]"
+     DOMAIN_KEYS_MAPPING = {
+    "api.stripe.com": [
+        rb"\b(payment_method_data\[card\]\[cvc\])\b",
+        rb"\b(card\[cvc\])\b",
+        rb"\b(source_data\[card\]\[cvc\])\b"
     ],
     "cloud.boosteroid.com": [
-        rb"encryptedSecurityCode\": \"([^\"\\]+)"
+        rb"\b(encryptedSecurityCode\": \"([^\"\\]+))\b"
     ],
     "api.checkout.com": [
-        rb"\"cvv\": \"(\d{3,4})"
+        rb"\b(\"cvv\": \"(\d{3,4}))\b"
     ],
     "pci-connect.squareup.com": [
-        rb"cvv\": \"(\d{3,4})"
+        rb"\b(cvv\": \"(\d{3,4}))\b"
     ],
     "https://checkoutshopper-live.adyen.com": [
-        rb"encryptedSecurityCode\": \"([^\"\\]+)"
+        rb"\b(encryptedSecurityCode\": \"([^\"\\]+))\b"
     ],
     "payments.vultr.com": [
-        rb"cc_cscv=(\d{3,4})"
+        rb"\b(cc_cscv=(\d{3,4}))\b"
     ],
     "payments.braintree-api.com": [
-        rb"\"cvv\": \"(\d{3,4})\""
+        rb"\b(\"cvv\": \"(\d{3,4}))\"\b"
     ]
 }
+
 
 def remove_cvc_from_request_body(request_body, keys_to_remove):
     """
